@@ -18,14 +18,14 @@ function App() {
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${id}`)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      setName(data.name);
-    })
-    .catch(error => {
-      console.error(error)
-    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        setName(data.name);
+      })
+      .catch(error => {
+        console.error(error);
+      })
   }, [id])
 
   return (
@@ -34,15 +34,15 @@ function App() {
       <Counter />
       <ToggleButton />
       <Article
-      title={'日本一わかりやすい焼きそば入門'}
-      content={'焼きそばは日本で最も美味しい食べ物です。（個人的感想）'}
+        title={'日本一わかりやすい焼きそば入門'}
+        content={'焼きそばは日本で最も美味しい食べ物です。（個人的感想）'}
       />
       <div>
         <p>{id}のGitHub上の名前は{name}です。</p>
         <button onClick={getRandomId}>IDを変更</button>
       </div>
     </div>
-  ); 
+  );
 }
 
 export default App;
